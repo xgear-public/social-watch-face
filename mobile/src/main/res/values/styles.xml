@@ -1,0 +1,25 @@
+<resources>
+
+    <style name="FlatButton" parent="@android:style/Widget.Button">
+        <item name="android:background">@android:color/white</item>
+        <item name="android:textColor">@color/main_text_blue</item>
+        <item name="android:textSize">@dimen/common_text_small</item>
+        <item name="android:gravity">center_vertical|start</item>
+        <item name="android:paddingStart">@dimen/common_margin_big</item>
+        <item name="android:paddingEnd">@dimen/common_margin_big</item>
+    </style>
+
+    <style name="SettingsTitle" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">@dimen/common_text_mid</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:gravity">center_vertical|start</item>
+        <item name="android:paddingStart">@dimen/common_margin_big</item>
+    </style>
+
+    <style name="SettingsSwitch">
+        <item name="android:paddingStart">@dimen/common_margin_big</item>
+        <item name="android:paddingEnd">@dimen/common_margin_big</item>
+        <item name="android:background">@android:color/white</item>
+    </style>
+</resources>

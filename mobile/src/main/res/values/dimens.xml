@@ -1,0 +1,23 @@
+<resources>
+
+    <dimen name="common_control_height">56dp</dimen>
+
+    <dimen name="common_text_small">16sp</dimen>
+    <dimen name="common_text_mid">18sp</dimen>
+    <dimen name="common_text_big">22sp</dimen>
+    <dimen name="common_text_xbig">26sp</dimen>
+
+    <dimen name="common_margin_small">4dp</dimen>
+    <dimen name="common_margin_mid">8dp</dimen>
+    <dimen name="common_margin_big">16dp</dimen>
+    <dimen name="common_margin_xbig">32dp</dimen>
+
+    <dimen name="group_height">@dimen/common_control_height</dimen>
+
+    <!--Card item-->
+    <dimen name="corner_radius">4dp</dimen>
+    <dimen name="guide_pic_margin">50dp</dimen>
+    <dimen name="guide_pic_edge">220dp</dimen>
+    <dimen name="shape_or_padding">16dp</dimen>
+
+</resources>

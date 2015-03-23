@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+           xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="AppTheme" parent="@style/Theme.AppCompat.Light">
+        <item name="android:actionBarStyle" tools:ignore="NewApi">@style/ActionBar</item>
+        <item name="actionBarStyle">@style/ActionBar</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="android:selectableItemBackground">@drawable/item_background</item>
+        <item name="colorControlActivated">@color/main_text_blue</item>
+    </style>
+
+    <style name="LibAppThemeNoActionBar" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@null</item>
+    </style>
+
+    <style name="GuideTheme" parent="LibAppThemeNoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+    </style>
+
+    <style name="ActionBar" parent="@style/Widget.AppCompat.ActionBar.Solid">
+        <item name="android:background" tools:ignore="NewApi">@android:color/white</item>
+        <item name="background">@android:color/white</item>
+
+        <item name="colorPrimary">@android:color/white</item>
+        <item name="colorPrimaryDark">@android:color/white</item>
+
+        <item name="titleTextStyle">@style/ActionBarTitle</item>
+        <item name="android:titleTextStyle">@style/ActionBarTitle</item>
+
+    </style>
+
+    <style name="ActionBarTitle">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">@dimen/common_text_big</item>
+    </style>
+</resources>
