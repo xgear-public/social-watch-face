@@ -1,32 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.yobalabs.socialwf" >
+          package="com.yobalabs.socialwf">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <!-- Required to act as a custom watch face. -->
-    <uses-permission android:name="com.google.android.permission.PROVIDE_BACKGROUND" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.permission.PROVIDE_BACKGROUND"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+
+    <permission
+            android:name="com.yobalabs.socialwf.permission.C2D_MESSAGE"
+            android:protectionLevel="signature"/>
+
+    <uses-permission android:name="com.yobalabs.socialwf.permission.C2D_MESSAGE"/>
 
     <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+            android:name=".SocialWfApp"
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme">
         <activity
-            android:name=".activity.MainActivity"
-            android:label="@string/app_name" >
+                android:name=".activity.MainActivity"
+                android:label="@string/app_name"
+                android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity
+        <!--
+            <activity
             android:name=".activity.AddAccountActivity"
-            android:label="@string/title_activity_add_account" >
+            android:label="@string/title_activity_add_account"
+            android:screenOrientation="portrait" >
         </activity>
+        -->
+        <activity
+                android:name=".activity.LoginActivity"
+                android:label="@string/title_activity_login"
+                android:windowSoftInputMode="adjustResize|stateVisible">
+        </activity>
+
+        <meta-data
+                android:name="com.google.android.gms.version"
+                android:value="@integer/google_play_services_version"/>
+
+        <service
+                android:name=".gcm.GCMService"
+                android:exported="false">
+        </service>
+
+        <receiver
+                android:name=".gcm.GCMReceiver"
+                android:enabled="true"
+                android:exported="true"
+                android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <!--
+                    <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+                <action android:name="com.google.android.c2dm.intent.REGISTER" />
+                -->
+
+                <category android:name="com.yobalabs.socialwf"/>
+            </intent-filter>
+        </receiver>
+
+        <service
+                android:name=".gcm.WearUpdateService"
+                android:enabled="true"
+                android:exported="false">
+        </service>
+
+        <service android:name=".support.WearRequestHandleService">
+            <intent-filter>
+                <action android:name="com.google.android.gms.wearable.BIND_LISTENER"/>
+            </intent-filter>
+        </service>
+
+        <receiver
+                android:name=".gcm.RunUpdate"
+                android:enabled="true"
+                android:exported="false">
+            <intent-filter>
+                <action android:name="com.yobalabs.socialwf.UPDATE"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

@@ -5,7 +5,7 @@
     <style name="AppTheme" parent="@style/Theme.AppCompat.Light">
         <item name="android:actionBarStyle" tools:ignore="NewApi">@style/ActionBar</item>
         <item name="actionBarStyle">@style/ActionBar</item>
-        <item name="android:windowBackground">@null</item>
+        <item name="android:windowBackground">@android:color/white</item>
         <item name="android:selectableItemBackground">@drawable/item_background</item>
         <item name="colorControlActivated">@color/main_text_blue</item>
     </style>
